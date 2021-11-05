@@ -27,6 +27,7 @@ class principal extends Controller
 
         return view('creacion');
         
+        
 
     }
 
