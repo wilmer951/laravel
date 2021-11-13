@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ControllerProd;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/','welcome')->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+Route::resource('productos', ControllerProd::class)->middleware(['auth']);
+
+
+require __DIR__.'/auth.php';
+
+
+
