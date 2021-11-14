@@ -92,14 +92,12 @@ return [
     */
 
     'from' => [
-<<<<<<< HEAD
         'address' => env('MAIL_FROM_ADDRESS', 'administrador@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Administrador'),
-=======
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
->>>>>>> 3ade6f9a8c4cf675aad9fd62ad7c2c14a793dc0b
     ],
+
 
     /*
     |--------------------------------------------------------------------------
