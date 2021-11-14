@@ -15,7 +15,10 @@
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+<<<<<<< HEAD
         "laravel/breeze": "^1.4",
+=======
+>>>>>>> 3ade6f9a8c4cf675aad9fd62ad7c2c14a793dc0b
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",

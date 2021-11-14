@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "ab2417df9ed9aebff8e5aea69a80a584",
+=======
+    "content-hash": "d4842c22e789d247c4b660e69490545f",
+>>>>>>> 3ade6f9a8c4cf675aad9fd62ad7c2c14a793dc0b
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5583,6 +5587,7 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/breeze",
             "version": "v1.4.3",
             "source": {
@@ -5640,6 +5645,8 @@
             "time": "2021-11-02T15:52:42+00:00"
         },
         {
+=======
+>>>>>>> 3ade6f9a8c4cf675aad9fd62ad7c2c14a793dc0b
             "name": "laravel/sail",
             "version": "v1.12.4",
             "source": {
