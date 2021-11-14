@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\producto;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\productCreate;
 
 use Illuminate\Http\Request;
 
@@ -27,7 +29,10 @@ class ControllerProd extends Controller
      */
     public function create()
     {
-        return view('productos.createpro');
+        return view('productos.createpro',[
+
+            'producto'=> new Producto
+        ]);
     }
 
     /**
@@ -39,19 +44,24 @@ class ControllerProd extends Controller
     public function store(Request $request)
     {
 
-        request()->validate([
-            'namproreg' => 'required'
+        $pro = request()->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'descripcion' => 'required',
+            'valor' => 'numeric'
 
 
         ]);
         $producto = new  producto();
-        $producto->name = $request->namproreg;
-        $producto->tipo = $request->tipproreg;
-        $producto->descripcion = $request->desproreg;
-        $producto->valor = $request->valproreg;
+        $producto->name = $request->nombre;
+        $producto->tipo = $request->tipo;
+        $producto->descripcion = $request->descripcion;
+        $producto->valor = $request->valor;
         $producto->save();
 
 
+
+        Mail::to('wilmer@gmail.com')->queue(new productCreate($pro));
         return redirect()->route('productos.index');
         
 
@@ -96,11 +106,20 @@ class ControllerProd extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $pro = request()->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'descripcion' => 'required',
+            'valor' => 'numeric'
+
+
+        ]);
         $producto = producto::findOrfail($id);
-        $producto->name = $request->namproedi;
-        $producto->tipo = $request->tipproedi;
-        $producto->descripcion = $request->desproedi;
-        $producto->valor = $request->valproedi;
+        $producto->name = $request->nombre;
+        $producto->tipo = $request->tipo;
+        $producto->descripcion = $request->descripcion;
+        $producto->valor = $request->valor;
         $producto->save();
 
         return redirect()->route('productos.index');
@@ -117,6 +136,6 @@ class ControllerProd extends Controller
 
         producto::findOrfail($id)->delete();
         
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.index')->with('operation','Operación exitosa');
     }
 }

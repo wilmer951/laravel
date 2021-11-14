@@ -1,3 +1,77 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+:root {
+
+    /* original  #420098*/
+      --original: #0483D9;
+    
+      --white: #ffffff;
+    }
+    
+
+
+h1{
+
+    color: var(--original);
+
+}
+
+
+nav.navbar {
+    background-color: var(--original);
+}
+
+
+.navbar-toggler-icon{
+    background:white;
+    color: black;
+}
+
+.navbar a:link,a:visited {
+    
+    color:#ffffff;
+  
+   
+}
+
+.navbar li:hover a:hover{
+
+    background:white;
+    color:var(--original);
+}
+
+
+
+/* CONTENIDO DASHBOARD*/
+.containerDas{
+
+    padding-top: 50px;
+
+}
+
+
+
+
+.containerDas .form{
+
+    margin: 50px auto;
+    width: 50%;
+    background:white;
+    box-shadow: 0 0 20px #DEDEDE;
+    padding: 55px 15px 15px 15px;
+}
+
+.containerDas .form .row{
+
+margin-bottom: 10px;
+
+}
+
+
+/* CONTENIDO DASHBOARD*/
+
+
+

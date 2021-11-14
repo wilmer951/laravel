@@ -2,33 +2,26 @@
 
 
 @section('contenido')
+<div class="containerDas">
 
 
-<form action="{{route('productos.update',$producto->id)}}" method="POST">
-    @csrf
+<h1 class="text-center" >Editar producto</h1>
+<form  class="form" action="{{route('productos.update',$producto->id)}}" method="POST">
+   
     @method('put')
-    <div>
-            <input type="text" name="namproedi" placeholder="Nombre" value="{{$producto->name}}">
+
+
+    @include('productos._form')
+
+    <div class="row text-center">
+<div class="col">
+        
+            <button class="btn btn-outline-info" type="submit">Actualizar</button>
+        </div>
     </div>
-
-            <div>
-                <input type="text" name="tipproedi" placeholder="tipo" value="{{$producto->tipo}}">
-        </div>
-
-
-
-        <div>
-            <input type="text" name="desproedi" placeholder="descripción" value="{{$producto->descripcion}}">
-        </div>
-
-
-
-        <div>
-            <input type="text" name="valproedi" placeholder="valor" value="{{$producto->valor}}">
-        </div>
-
-
-        <button type="submit">Guardar</button>
+    @include('partials._error')
 </form>
-    
+
+
+</div>
 @endsection

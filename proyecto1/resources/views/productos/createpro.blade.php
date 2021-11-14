@@ -3,40 +3,34 @@
 
 @section('contenido')
 
+<div class="containerDas">
 
-@if ($errors->any())
+<h1 class="text-center" >Crear nuevo producto</h1>
+<form class="form" action="{{route('productos.store')}}" method="POST">
+    <div class="form-group">
+
+    @include('productos._form')
+   
+<div class="row">
+    <div class="col text-center">
     
-
-    @foreach ($errors->all() as $error)
-   <li> {{$error}}</li>
-    @endforeach
-@endif
-
-<form action="{{route('productos.store')}}" method="POST">
-    @csrf
-
-    <div>
-            <input type="text" name="namproreg" placeholder="Nombre" value="{{old('namproreg')}}">
+        <button class="btn btn-outline-info" type="submit">Guardar</button>
     </div>
-
-            <div>
-                <input type="text" name="tipproreg" placeholder="tipo" value={{old('tipproreg')}}>
-        </div>
+</div>
+</div>
 
 
 
-        <div>
-            <input type="text" name="desproreg" placeholder="descripción">
-        </div>
+@include('partials._error')
 
 
 
-        <div>
-            <input type="text" name="valproreg" placeholder="valor">
-        </div>
-
-
-        <button type="submit">Guardar</button>
 </form>
     
+
+
+
+
+
+</div>
 @endsection

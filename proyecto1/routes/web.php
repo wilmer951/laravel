@@ -17,11 +17,7 @@ use App\Http\Controllers\ControllerProd;
 */
 
 Route::view('/','welcome')->name('home');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+Route::view('/dashboard','dashboard')->middleware(['auth'])->name('dashboard');
 
 Route::resource('productos', ControllerProd::class)->middleware(['auth']);
 
